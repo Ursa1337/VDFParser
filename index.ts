@@ -1,14 +1,9 @@
-export default function VDFparse(VDFstring) {
+export default function VDFparse(VDFstring: string): object {
   let result = {}
   let value = ''
   let isKey = true // used for indicate type value
   let isValue = false // used to indicate the beginning of a line
-  let keyOrder = []
-
-  const isNumeric = (str) => {
-    if (typeof str != "string") return false
-    return !isNaN(str) &&!isNaN(parseFloat(str))
-  }
+  let keyOrder: string[] = []
 
   for (let char of VDFstring) {
     if (char === '\"') {
@@ -19,9 +14,9 @@ export default function VDFparse(VDFstring) {
           keyOrder.push(value)
         }
         else {
-          keyOrder.reduce((acc, key, index) => {
+          keyOrder.reduce((acc: {[key: string]: any}, key, index) => {
             if (index === keyOrder.length - 1) {
-              acc[key] = isNumeric(value) ? Number(value) : value
+              acc[key] = isNaN(Number(value)) ? Number(value) : value
             }
             else {
               acc[key] = acc[key] || {}

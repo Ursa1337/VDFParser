@@ -4,5 +4,8 @@
   "description": "",
   "main": "vdfparser.js",
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
 }
