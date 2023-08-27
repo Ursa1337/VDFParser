@@ -2,10 +2,14 @@
   "name": "vdfparser",
   "version": "1.0.0",
   "description": "",
-  "main": "vdfparser.js",
+  "main": "index.js",
   "author": "",
   "license": "ISC",
+  "types": "lib",
   "devDependencies": {
     "typescript": "^5.2.2"
+  },
+  "scripts": {
+    "build": "tsc"
   }
 }

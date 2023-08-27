@@ -6,12 +6,11 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
-    "outDir": "."
+    "declaration": true,
+    "outDir": "lib"
   },
   "exclude": [
-    "node_modules"
-  ],
-  "include": [
-    "src/**/*"
+    "node_modules",
+    "lib"
   ]
 }
