@@ -16,7 +16,7 @@ export default function VDFparse(VDFstring: string): object {
         else {
           keyOrder.reduce((acc: {[key: string]: any}, key, index) => {
             if (index === keyOrder.length - 1) {
-              acc[key] = isNaN(Number(value)) ? Number(value) : value
+              acc[key] = !isNaN(Number(value)) ? Number(value) : value
             }
             else {
               acc[key] = acc[key] || {}
